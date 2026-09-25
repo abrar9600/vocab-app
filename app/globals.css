@@ -1,26 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light !important;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Force light ice-blue background and dark navy text globally */
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f5ff !important;
+  color: #0f172a !important;
+  min-height: 100vh;
+}
+
+/* Ensure default browser dark mode preferences do not override background */
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #f0f5ff !important;
+    color: #0f172a !important;
+  }
 }
